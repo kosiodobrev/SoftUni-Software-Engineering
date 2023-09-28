@@ -11,5 +11,3 @@ for current_line in range(number_of_lines):
         break
 else:
     print("BALANCED")
-
-
