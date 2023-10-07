@@ -12,7 +12,7 @@ def orders(product,quantity):
     elif product == "snacks":
         return f"{snacks * quantity:.2f}"
 
-product = input()
+prouduct = inpt()
 quantity = int(input())
 result = orders(product, quantity)
 print(result)
