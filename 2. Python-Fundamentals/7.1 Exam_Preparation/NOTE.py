@@ -1,21 +1,10 @@
-houses = [int(house) for house in input().split("@")]
-current_index = 0
-command = input()
-while command != "Love!":
-    jump_length = int(command.split()[1])
-    current_index += jump_length
-    if current_index not in range(len(houses)):
-        current_index = 0
-    if houses[current_index] == 0:
-        print(f"Place {current_index} already had Valentine's day.")
-    else:
-        houses[current_index] -= 2
-        if houses[current_index] == 0:
-            print(f"Place {current_index} has Valentine's day.")
-    command = input()
-print(f"Cupid's last position was {current_index}.")
-if sum(houses) == 0:
-    print("Mission was successful.")
-else:
-    houses = [int(house) for house in houses if int(house) != 0]
-    print(f"Cupid has failed {len(houses)} places.")
+n = int(input())
+m = int(input())
+s = int(input())
+for current_address in range(m, n - 1, -1):
+                if current_address % 2 == 0 and current_address % 3 == 0:
+                    if current_address == s:
+                        break
+                    else:
+                        print(current_address, end=" ")
+
