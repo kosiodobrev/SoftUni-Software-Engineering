@@ -3,14 +3,17 @@ from collections import deque
 green_light = int(input())
 free_window = int(input())
 command = input()
-green_light_cycle = False
+all_passed = True
 current_car = deque()
+passed_cars = 0
 
 
 while command != "End":
     if command == "green":
         green_light_copy, cycle_copy = green_light, free_window
-        green_light_cycle = True
+        while green_light_copy:
+            if current_car:
+
         current_green_light = green_light
     else:
         current_car = deque(command)
