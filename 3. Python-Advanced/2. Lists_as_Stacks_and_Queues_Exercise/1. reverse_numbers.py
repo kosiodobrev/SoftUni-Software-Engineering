@@ -1,3 +1,3 @@
-numbers = input().split()
-while numbers:
-    print(numbers.pop(), end=" ")
+given_string = input().split()
+while given_string:
+    print(given_string.pop(), end=" ")
