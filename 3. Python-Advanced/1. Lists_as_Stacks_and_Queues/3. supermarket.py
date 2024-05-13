@@ -1,14 +1,14 @@
 from collections import deque
 
-name = input()
-customers = deque()
-while name != "End":
-    if name == "Paid":
-        while customers:
-            print(customers.popleft())
+command = input()
+queue = deque([])
+
+while command != "End":
+    if command == "Paid":
+        while queue:
+            print(queue.popleft())
     else:
-        customers.append(name)
+        queue.append(command)
+    command = input()
 
-    name = input()
-print(f"{len(customers)} people remaining.")
-
+print(f"{len(queue)} people remaining.")

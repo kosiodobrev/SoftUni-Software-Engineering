@@ -1,10 +1,12 @@
 from collections import deque
-
-names = deque(input().split())
+kids = deque(input().split())
 n = int(input())
-result = deque()
-while len(names) > 1:
-    names.rotate(-n + 1)
-    current_kid = names.popleft()
-    print(f"Removed {current_kid}")
-print(f"Last is {names[0]}")
+turns = 0
+
+while len(kids) > 1:
+    for i in range(n - 1):
+        first_kid = kids.popleft()
+        kids.append(first_kid)
+    print(f"Removed {kids.popleft()}")
+
+print(f"Last is {kids.popleft()}")
