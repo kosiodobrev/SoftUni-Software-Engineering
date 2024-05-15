@@ -1,16 +1,17 @@
 from collections import deque
-
-food = int(input())
+quantity_food = int(input())
 orders = deque([int(x) for x in input().split()])
 
 print(max(orders))
 
-for order in orders.copy():
-    if food >= order:
-        orders.popleft()
-        food -= order
-    else:
-        print(f"Orders left:", *orders)
-        break
+while orders and orders[0] <= quantity_food:
+    quantity_food -= orders.popleft()
+
+if orders:
+    print(f"Orders left:", *orders)
 else:
     print("Orders complete")
+
+
+
+

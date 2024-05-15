@@ -1,17 +1,13 @@
-clothes = [int(x) for x in input().split()]
-rack_space = int(input())
+clothes_boxes = [int(x) for x in input().split()]
+capacity = int(input())
 
-racks_count = 1
-current_rack_space = rack_space
+total_racks = 0
 
-while clothes:
-    cloth = clothes.pop()
+while clothes_boxes:
+    total_racks += 1
+    current_rack_capacity = capacity
+    while clothes_boxes and clothes_boxes[-1] <= current_rack_capacity:
+        current_rack_capacity -= clothes_boxes.pop()
 
-    if current_rack_space >= cloth:
-        current_rack_space -= cloth
-    else:
-        racks_count += 1
-        current_rack_space = rack_space - cloth
-
-print(racks_count)
+print(total_racks)
 
