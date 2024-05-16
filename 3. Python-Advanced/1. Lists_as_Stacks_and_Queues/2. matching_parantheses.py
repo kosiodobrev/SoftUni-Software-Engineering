@@ -7,4 +7,3 @@ for index in range(0, len(expression)):
     elif expression[index] == ")":
         start_index = stack.pop()
         print(expression[start_index:index+1])
-
