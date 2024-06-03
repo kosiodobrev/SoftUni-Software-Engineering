@@ -7,16 +7,24 @@ class MustContainAtSymbolError(Exception):
 class InvalidDomainError(Exception):
     pass
 
-given_email = input()
+email_min_len = 5
+valid_domains = ["com", "bg", "org", "net"]
 
-while given_email != "End":
+while True:
+    given_email = input()
+    if given_email == "End":
+        break
+
     if "@" not in given_email:
         raise MustContainAtSymbolError("Email must contain @")
-    else:
-        name, domain = given_email.split("@")
-    if len(name) <= 4:
+
+    if len(given_email.split("@")[0]) < email_min_len:
         raise NameTooShortError("Name must be more than 4 characters")
-    if ".com" not in domain and ".bg" not in domain and ".org" not in domain and ".net" not in domain:
+
+    domain = given_email.split(".")[-1]
+
+    if domain not in valid_domains:
         raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
+
     print("Email is valid")
-    given_email = input()
+
