@@ -17,3 +17,4 @@ while True:
     max_knight = [0, 0]
     for k_row, k_col in knights:
         hits = 0
+
